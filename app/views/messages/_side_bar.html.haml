@@ -6,19 +6,19 @@
         = current_user.name
       %ul.side-header__menu
         %li.side-header__new-group
-          -# = link_to new_group_path, class:"side-header__icon" do
-          -#   .i.fa.fa-edit
+          = link_to new_group_path, class:"side-header__icon" do
+            .i.fa.fa-edit
         %li.side-header__edit-user
           = link_to edit_user_path(current_user), class:"side-header__icon" do
             .i.fa.fa-cog
 
   .group-list
-    -# - current_user.groups.each do |group|
+    - current_user.groups.each do |group|
       .group
         -# = link_to group_messages_path(group) do
           %p.group__groupname 
-            -# = group.name
+            = group.name
           %p.group__new-message
-            -# = group.show_last_message
+            = group.show_last_message
 
 
