@@ -2,23 +2,23 @@
   .group-info
     .group-info__group
       %p.group-info__groupname
-        -# = @group.name
+        = @group.name
       %ul.group-info__group-member
         member:
-        -# - @group.users.each do |user|
+        - @group.users.each do |user|
           %li.group-info__group-username
-            -# = user.name
+            = user.name
 
     %p.group-info__edit
-      -# = link_to edit_group_path(@group), class:"group-info__edit-btn" do
+      = link_to edit_group_path(@group), class:"group-info__edit-btn" do
         Edit
 
   .message
-    -# = render @messages
+    = render @messages
  
   .form
     .message-form
-      -# = form_for [@group, @message] do |f|
+      = form_for [@group, @message] do |f|
         .input-message
           = f.text_field :content, class: "message-form__text", placeholder: "type a message"
           = f.label :image, class: "input-message__image" do
